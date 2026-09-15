@@ -1,0 +1,18 @@
+title: Certutil Download/Decode LOLBin Abuse
+id: sigma-certutil-download-001
+description: Detects certutil.exe used with urlcache or decode flags, an abuse of a legitimate certificate-management binary for download/decode.
+status: stable
+level: medium
+logsource:
+  category: process_creation
+  product: windows
+detection:
+  selection:
+    process_name|endswith: 'certutil.exe'
+    command_line|contains:
+      - '-urlcache'
+      - '-decode'
+  condition: selection
+tags:
+  - attack.command_and_control
+  - attack.t1105
