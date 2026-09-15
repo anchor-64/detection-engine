@@ -404,5 +404,3 @@ scaling of the correlation engine's in-memory state is a future-scope item.
 * A pluggable asset-criticality/CMDB integration for the severity classifier
 * Incident de-duplication/aggregation layer ahead of the Response Engine handoff
 
-\---
-
